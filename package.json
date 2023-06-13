@@ -1,0 +1,23 @@
+{
+  "name": "database-agnostic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:benchmark": "npx ts-node src/benchmark.ts",
+    "start:postgres": "npx ts-node src/postgres.ts",
+    "start:mongodb": "npx ts-node src/mongodb.ts",
+    "start": "npx ts-node src/mongodb.ts & npx ts-node src/postgres.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^5.6.0",
+    "pg": "^8.11.0",
+    "typeorm": "^0.3.16"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.10.2"
+  }
+}
