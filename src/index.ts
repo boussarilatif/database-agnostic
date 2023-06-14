@@ -26,11 +26,19 @@ const main = async () => {
 main().catch(error => {
   console.log('Connection error:', error);
   process.exit(1);
-}).then(()=>{
+}).then(async () => {
   console.log('Connected to PostgreSQL database');
   let bookRepo = appDataSource.getRepository(Book);
 
-  bookRepo.find().then((book)=>{
-     console.log(book,'[PostgreSQL]')
-  })
+  const newBook = new Book();
+  newBook.title = 'Example Book';
+
+  const savedBook = await bookRepo.save(newBook);
+
+  const retrievedBook = await bookRepo.findOne({
+    where: {
+      id: savedBook.id
+    }
+  });
+  console.log(retrievedBook);
 });
