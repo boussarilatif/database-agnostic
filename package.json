@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:benchmark": "npx ts-node src/benchmark.ts",
-    "start:postgres": "npx ts-node src/postgres.ts",
-    "start:mongodb": "npx ts-node src/mongodb.ts",
-    "start": "npx ts-node src/mongodb.ts & npx ts-node src/postgres.ts"
+    "start": "npx ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
